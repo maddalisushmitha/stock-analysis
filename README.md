@@ -76,4 +76,22 @@ For i = 0 To 11
  
 ## Execution Times:
 
-1.By refactoring  run time was reduced 
+1.By refactoring  run time was reduced
+
+### 2017
+
+![2017](https://github.com/maddalisushmitha/stock-analysis/blob/main/images_for_readme/Runtime_2017.png)
+
+### 2018
+
+![2018](https://github.com/maddalisushmitha/stock-analysis/blob/main/images_for_readme/Runtime_2018.png)
+
+## Summary:
+
+### Advantages of refactored:
+
+1.Saves time and memory
+
+## Pros and Cons that are applied to refactoring the original VBA script:
+
+1.By using arrays tickerVolumes, tickerStartingPrices and tickerEndingPrices and initializing a variable tickerIndex that acts as index to the arrays
