@@ -4,7 +4,7 @@
 
 Projecting stock which are profitable in years 2017 and 2018 so as to predict next years profitable stocks to help Steve and his parents make a right decision to invest by creating an optimized VBA code which is far better in terms of execution time, saving memory than the original code.
 
-# Results:
+## Results:
 
 ## Stocks performance between 2017 and 2018:
 
