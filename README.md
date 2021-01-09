@@ -30,49 +30,49 @@ Projecting stock which are profitable in years 2017 and 2018 so as to predict ne
 
 #### Original code:
 
-For i = 0 To 11
-        ticker = tickers(i)
-        totalVolume = 0
-        Worksheets(yearValue).Activate
-        For j = rowStart To rowEnd
+For i = 0 To 11  
+        ticker = tickers(i)<br/>
+        totalVolume = 0  
+        Worksheets(yearValue).Activate  
+        For j = rowStart To rowEnd  
 #### Refractor code:
 
-For i = 0 To 11
-        tickerVolumes(i) = 0
-        Next i
-    'Looping over all the rows in the spreadsheet.
-    For i = 2 To RowCount
+For i = 0 To 11<br/>
+        tickerVolumes(i) = 0  
+        Next i  
+    'Looping over all the rows in the spreadsheet.  
+    For i = 2 To RowCount  
     
  2.As we are initiating with arrays and tickerIndex the original lines of code was reduced
  
 #### Original code:
 
-   'To find total volume for a give ticker
-	If Cells(j, 1).Value = ticker Then
-                totalVolume = totalVolume + Cells(j, 8).Value
-            End If
-               'To find Starting price of given ticker
-            If Cells(j, 1).Value = ticker And Cells(j - 1, 1).Value <> ticker Then
-                startingPrice = Cells(j, 6).Value
-            End If
-              'To find Ending price of given ticker 
-            If Cells(j, 1).Value = ticker And Cells(j + 1, 1).Value <> ticker Then
-                endingPrice = Cells(j, 6).Value
-            End If
+   'To find total volume for a give ticker  
+	If Cells(j, 1).Value = ticker Then  
+                totalVolume = totalVolume + Cells(j, 8).Value  
+            End If  
+               'To find Starting price of given ticker  
+            If Cells(j, 1).Value = ticker And Cells(j - 1, 1).Value <> ticker Then  
+                startingPrice = Cells(j, 6).Value  
+            End If  
+              'To find Ending price of given ticker   
+            If Cells(j, 1).Value = ticker And Cells(j + 1, 1).Value <> ticker Then  
+                endingPrice = Cells(j, 6).Value  
+            End If  
 
 #### Refractor code:
 
-   'To find total volume for a give ticker
-	tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
-            'To find Starting price of given ticker
-           If Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
-                tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
-            End If
-               'To find Ending price of given ticker 
-            If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
-                tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
-                tickerIndex = tickerIndex + 1
- End if
+   'To find total volume for a give ticker  
+	tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value  
+            'To find Starting price of given ticker  
+           If Cells(i - 1, 1).Value <> tickers(tickerIndex) Then  
+                tickerStartingPrices(tickerIndex) = Cells(i, 6).Value  
+            End If  
+               'To find Ending price of given ticker   
+            If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then  
+                tickerEndingPrices(tickerIndex) = Cells(i, 6).Value  
+                tickerIndex = tickerIndex + 1  
+ End if  
  
 ## Execution Times:
 
